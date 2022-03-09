@@ -21,8 +21,8 @@ export const Login = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              maxWidth: 400,
-              minWidth: 300,
+              maxWidth: "400",
+              minWidth: "300",
             }}
           >
             <Grid container justifyContent="center">
@@ -32,8 +32,9 @@ export const Login = () => {
                 alt="logo"
               />
             </Grid>
-            <TextField label="Username" margin="normal" />
-            <TextField label="Password" margin="normal" />
+            <TextField label="Username" margin="normal" variant="standard" required />
+            <TextField label="Password" margin="normal" variant="standard" type="password"
+          autoComplete="current-password" required />
             <div style={{ height: 20 }} />
             <Button color="primary" variant="contained">
               Log in
