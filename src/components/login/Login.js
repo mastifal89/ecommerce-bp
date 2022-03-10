@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Grid, TextField } from "@mui/material";
 
 
 export const Login = () => {
+
+  const [user, setUser] = useState({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(user);
+  }
+
+  const handleOnChange = (e) => {
+    setUser(
+      user => ({
+        ...user, [e.target.name]: e.target.value
+      })
+    )
+  }
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <Grid container style={{ minHeight: "100vh" }}>
         <Grid
           container
@@ -32,11 +48,30 @@ export const Login = () => {
                 alt="logo"
               />
             </Grid>
-            <TextField label="Username" margin="normal" variant="standard" required />
-            <TextField label="Password" margin="normal" variant="standard" type="password"
-          autoComplete="current-password" required />
+            <TextField 
+              onChange={handleOnChange} 
+              name="username"
+              label="Username" 
+              margin="normal" 
+              variant="standard" 
+              required 
+            />
+            <TextField 
+              onChange={handleOnChange} 
+              name="password"
+              label="Password" 
+              margin="normal" 
+              variant="standard" 
+              type="password"
+              autoComplete="current-password" 
+              required 
+            />
             <div style={{ height: 20 }} />
-            <Button color="primary" variant="contained">
+            <Button 
+              color="primary" 
+              variant="contained"
+              type="submit"
+            >
               Log in
             </Button>
             <div style={{ height: 20 }} />
@@ -59,6 +94,6 @@ export const Login = () => {
           />
         </Grid>
       </Grid>
-    </div>
+    </form>
   );
 };

@@ -3,7 +3,7 @@ import { Box, TextField, Grid } from "@mui/material";
 
 export const SignIn = () => {
   return (
-    <Grid container style={{ minHeight: "100vh" }}>
+    <Grid container style={{ minHeight: "100vh", height: "100%" }}>
       <Grid
         container
         item
