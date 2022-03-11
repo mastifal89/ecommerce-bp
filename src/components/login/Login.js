@@ -17,6 +17,7 @@ export const Login = () => {
         ...user, [e.target.name]: e.target.value
       })
     )
+    
   }
 
   return (
